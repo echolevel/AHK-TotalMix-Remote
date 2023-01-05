@@ -2,13 +2,17 @@
  Control RME's TotalMix software for its Fireface/Babyface/MADIface audio interfaces with keyboard shortcuts via AutoHotkey and OSC
 
 # About
-I wanted to use my 9-key RPi Pico-based macro pad (a tiny USB HID keyboard) to control some TotalMix functionality without having to reach over to my UCX-II. RME sell a hardware USB remote called the ARC, but it's too big and unwieldy for my workflow.
+I wanted to use my 9-key RPi Pico-based macro pad (a tiny USB HID keyboard) to quickly control some TotalMix functionality without having to reach over to my UCX-II. RME sell a hardware USB remote called the ARC, but it's too big and unwieldy for my workflow.
 
-My macro pad is programmed to emit very dense keystroke combos e.g. RightCtrl+RightShift+RightAlt+F7 which are very unlikely to clash with anything else, and these are caught by an AutoHotkey script which uses a fantastic little AHK-OSC bridge DLL by Ludwig Frühschütz to generate OSC (Open Sound Control) messages which are sent to TotalMix.
+![Photo of a macro pad next to a keyboard, with the UCX II that's being controlled in the background](./desk.jpg)
 
-Now I can very easily - and globally, regardless of which application has focus - do things like toggle a certain analogue input's mute state, toggle main out muting, headphone mute, mono collapse, main speaker A/B selection, and so on.
+My macro pad is programmed to emit very dense keystroke combos e.g. RightCtrl+RightShift+RightAlt+F7 which are very unlikely to clash with anything else, and these are caught by an AutoHotkey script which uses a fantastic little AHK-OSC bridge DLL by Ludwig Frühschütz to generate OSC (Open Sound Control) messages which are sent to TotalMix. OSC is a network protocol, but since we send to 127.0.0.1 (localhost loopback) TotalMix receives it just as it would from any other network host.
+
+Now I can very easily (and globally, regardless of which application has focus) do things like toggle a certain analogue input's mute state, toggle main out muting, headphone mute, mono collapse, main speaker A/B selection, and so on.
 
 I'm documenting this mostly for my own future reference, and because deciphering RME's documentation was quite a frustrating, unintuitive process. Hopefully it'll help somebody else.
+
+
 
 # Setup
 
